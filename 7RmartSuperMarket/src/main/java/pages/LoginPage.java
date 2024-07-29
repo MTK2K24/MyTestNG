@@ -20,8 +20,9 @@ public class LoginPage {
 	@FindBy(xpath="//input[@name='username']") WebElement usernameField;
 	@FindBy(xpath="//input[@name='password']") WebElement passwordField;
 	@FindBy(xpath="//button[text()='Sign In']") WebElement signinField;
-	@FindBy(xpath="//aside[@class=\"main-sidebar elevation-4 sidebar-light-dark\"]") WebElement dispalyDashboardElement;
-	@FindBy(xpath="//div[@class=\"alert alert-danger alert-dismissible\"]") WebElement alertbox;
+	@FindBy(xpath="//aside[@class='main-sidebar elevation-4 sidebar-light-dark']") WebElement dispalyDashboardElement;
+	@FindBy(xpath="//div[@class='alert alert-danger alert-dismissible']") WebElement alertbox;
+	
 	
 		public LoginPage enterUserNameOnUserNameField(String username)
 	{

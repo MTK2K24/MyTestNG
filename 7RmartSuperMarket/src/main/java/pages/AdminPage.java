@@ -6,6 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import utilities.PageUtility;
+import utilities.RandomUtility;
 
 public class AdminPage 
 {
@@ -18,11 +19,12 @@ public class AdminPage
         pageutility=new PageUtility();
     }
     
-    @FindBy(xpath="//a[@onclick=\"click_button(1)\"]") WebElement newbutton;
-    @FindBy(xpath="//input[@id=\"username\"]") WebElement usernamefield; 
-    @FindBy(xpath="//input[@id=\"password\"]") WebElement passwordfield;
-    @FindBy(xpath="//select[@id=\"user_type\"]") WebElement usertypefield; 
-    @FindBy(xpath="//button[@name=\"Create\"]") WebElement savebutton; 
+    @FindBy(xpath="//a[@onclick='click_button(1)']") WebElement newbutton;
+    @FindBy(xpath="//input[@id='username']") WebElement usernamefield; 
+    @FindBy(xpath="//input[@id='password']") WebElement passwordfield;
+    @FindBy(xpath="//select[@id='user_type']") WebElement usertypefield; 
+    @FindBy(xpath="//button[@name='Create']") WebElement savebutton; 
+    @FindBy(xpath="//div[@class='alert alert-success alert-dismissible']") WebElement successMessage;
     
     public AdminPage clickingNewButtonToLoadAdminUserInformationPage()
     {
@@ -49,11 +51,11 @@ public class AdminPage
     	savebutton.click();
     	return this;
     }
+    public String getSuccessMessage() {
+        return successMessage.getText();
+    }
     
-    
-    
-    
-    
+   
     
     
 }
