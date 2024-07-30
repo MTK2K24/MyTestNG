@@ -5,13 +5,17 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import utilities.WaitUtility;
+
 public class ManageProductPage {
 
     WebDriver driver;
+    WaitUtility waitutility;
     public ManageProductPage(WebDriver driver)
     {
         this.driver = driver;
         PageFactory.initElements(driver, this);
+        waitutility = new WaitUtility();
     }
 
     @FindBy(xpath = "//a[@onclick=\"click_button(2)\"]") WebElement searchIcon;
@@ -19,6 +23,7 @@ public class ManageProductPage {
     @FindBy(xpath = "//input[@name=\"un\"]") WebElement textToSearch;
 
     @FindBy(xpath = "//button[@value=\"sr\"]") WebElement searchButton;
+    @FindBy(xpath = "//button[@class='btn btn-xs btn-success']") WebElement searchedproductinlist;
 
    
 
@@ -39,5 +44,17 @@ public class ManageProductPage {
         searchButton.click();
         return this;
     }
+     public String getSuccessMessage()
+     {
+         waitutility.waitUsingElementToBeVisible(driver, searchedproductinlist);
+         return searchedproductinlist.getText();
+     }
+     
+     public boolean isSearchResultDisplayed() 
+     {
+         waitutility.waitUsingElementToBeVisible(driver, searchedproductinlist);
+         return searchedproductinlist.isDisplayed();
+     }
+    
      
 }

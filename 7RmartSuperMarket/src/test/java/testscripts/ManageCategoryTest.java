@@ -1,7 +1,5 @@
 package testscripts;
 
-import static org.testng.Assert.assertEquals;
-
 import java.awt.AWTException;
 
 import org.testng.Assert;

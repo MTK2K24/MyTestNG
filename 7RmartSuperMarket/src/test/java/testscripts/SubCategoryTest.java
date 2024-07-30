@@ -4,8 +4,6 @@ import java.awt.AWTException;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
-import pages.AdminPage;
 import pages.LoginPage;
 import pages.SubCategoryPage;
 import utilities.ExcelUtility;

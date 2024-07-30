@@ -7,7 +7,6 @@ import java.time.Duration;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
-import dev.failsafe.internal.util.Assert;
 import pages.LoginPage;
 import utilities.ExcelUtility;
 
