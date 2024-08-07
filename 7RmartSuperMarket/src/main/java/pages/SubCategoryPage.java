@@ -8,26 +8,24 @@ import org.openqa.selenium.support.PageFactory;
 import utilities.PageUtility;
 import utilities.WaitUtility;
 
-public class SubCategoryPage{
+public class SubCategoryPage
+{
 	WebDriver driver;
 	WaitUtility waitutility;
 	PageUtility pageutility;
-	
-	 public SubCategoryPage(WebDriver driver)
+	public SubCategoryPage(WebDriver driver)
 	    {
-	        this.driver = driver;
-	        PageFactory.initElements(driver, this);
-	        waitutility = new WaitUtility();
-	        pageutility=new PageUtility();
-	        
-	    }
-	 
-	 @FindBy(xpath="//a[@onclick='click_button(1)']") WebElement newbutton;
-	 @FindBy(xpath="//select[@id='cat_id']") WebElement categorydropdown;
-	 @FindBy(xpath="//input[@id='subcategory']") WebElement subcategory;
-	 @FindBy(xpath="//input[@id='main_img']") WebElement choosefilebutton;  
-	 @FindBy(xpath="//button[@type='submit']") WebElement savebutton; 
-	 @FindBy(xpath="//div[@class='alert alert-success alert-dismissible']") WebElement sucessmessage;
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
+		waitutility = new WaitUtility();
+		pageutility=new PageUtility();
+		}
+	 @FindBy(xpath="//a[@onclick='click_button(1)']") private WebElement newbutton;
+	 @FindBy(xpath="//select[@id='cat_id']") private WebElement categorydropdown;
+	 @FindBy(xpath="//input[@id='subcategory']") private WebElement subcategory;
+	 @FindBy(xpath="//input[@id='main_img']") private WebElement choosefilebutton;  
+	 @FindBy(xpath="//button[@type='submit']") private WebElement savebutton; 
+	 @FindBy(xpath="//div[@class='alert alert-success alert-dismissible']") private WebElement sucessmessage;
 	 
 	 public SubCategoryPage navigatingToTheNewPage(String naviagteurl) 
 	    {
@@ -48,7 +46,6 @@ public class SubCategoryPage{
 	 public SubCategoryPage enteringDataInSubCategory(String texttobeenteredinsubcategory)
 	    {
 	    	subcategory.sendKeys(texttobeenteredinsubcategory);
-	    	
 	    	return this;
 	    }
 	 
@@ -70,7 +67,4 @@ public class SubCategoryPage{
 		  waitutility.waitUsingElementToBeVisible(driver, sucessmessage);
 	        return sucessmessage.getText();
 	    }
-	 
-	 
-	 
-}
+	 }

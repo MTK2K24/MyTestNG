@@ -7,12 +7,12 @@ import utilities.ExcelUtility;
 
 public class ManageProductTest extends Base {
 
-    @Test
+    @Test(groups= {"Regression"},retryAnalyzer=retry.Retry.class,description="This test case is to verify if a product can be searched")
     public void verifyIfProductCanBeSearched() {
         String username = ExcelUtility.getString(1, 0, "LoginPage");
         String password = ExcelUtility.getString(1, 1, "LoginPage");
         String title = ExcelUtility.getString(1, 0, "ManageProductPage");
-        String url = "https://groceryapp.uniqassosiates.com/admin/list-product";
+        String url = ExcelUtility.getString(1, 1, "ManageProductPage");
 
         LoginPage loginpage = new LoginPage(driver);
         loginpage.enterUserNameOnUserNameField(username)

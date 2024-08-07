@@ -7,6 +7,8 @@ import java.time.Duration;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
+import com.sun.net.httpserver.Authenticator.Retry;
+
 import pages.LoginPage;
 import utilities.ExcelUtility;
 
@@ -14,7 +16,7 @@ import utilities.ExcelUtility;
 
 public class LoginTest extends Base {
 
-	@Test
+	@Test(groups= {"Regression"},retryAnalyzer=retry.Retry.class,description="This test case is for correct login")
 	public void verifyWhetherTheUserIsAbleToLoginWithCorrectUserNameAndCorrectPassword()
 	{
 		
@@ -29,7 +31,7 @@ public class LoginTest extends Base {
         
 		
 	}
-	@Test
+	@Test(groups= {"Smoke"},retryAnalyzer=retry.Retry.class,description="This test case is for incorrect login")
 	public void verifyWhetherTheUserIsAbleToLoginWithWrongUserNameAndWrongPassword()
 	{
 		
@@ -43,7 +45,7 @@ public class LoginTest extends Base {
         boolean alertstatus=loginpage.isAlertBoxDisplayed();
         assertTrue(alertstatus," User is unable to login sucessful with correct credentials");
 	}
-	@Test
+	@Test(groups= {"Regression"},retryAnalyzer=retry.Retry.class,description="This test case is for incorrect login")
 	public void verifyWhetherTheUserIsAbleToLoginWithWrongUserNameAndCorrectPassword()
 	{
 		
@@ -55,7 +57,7 @@ public class LoginTest extends Base {
         assertTrue(alertstatus," User is unable to login sucessful with correct credentials");
 		
 	}
-	@Test
+	@Test(groups= {"Regression"},retryAnalyzer=retry.Retry.class,description="This test case is for incorrect login")
 	public void verifyWhetherTheUserIsAbleToLoginWithCorrectUserNameAndWrongPassword()
 	{
 		

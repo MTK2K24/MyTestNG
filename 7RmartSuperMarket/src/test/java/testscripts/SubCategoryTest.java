@@ -13,15 +13,15 @@ import utilities.RandomUtility;
 public class SubCategoryTest extends Base 
 {
 	
-	@Test
+	@Test(groups= {"Regression"},retryAnalyzer=retry.Retry.class,description="This test case is verify if a subcategory can be added")
 	
 	  public void verifyIfASubCategoryCanBeAdded() throws AWTException
 	{
 		String username= ExcelUtility.getString(1, 0, "LoginPage");
         String password=ExcelUtility.getString(1, 1, "LoginPage");
-        String url="https://groceryapp.uniqassosiates.com/admin/list-sub-category";
+        String url=ExcelUtility.getString(1, 0, "SubCategory");
         String texttobeenteredinsubcategory= new RandomUtility().generateRandomSubCategoryName();
-        String category = "Olives";
+        String category=ExcelUtility.getString(1, 1, "SubCategory") ;
         
         LoginPage loginpage = new LoginPage(driver);
         loginpage.enterUserNameOnUserNameField(username).enterPasswordOnPasswordField(password).clickOnSignIn();

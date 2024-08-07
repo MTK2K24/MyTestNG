@@ -26,12 +26,8 @@ public class FileUploadUtility {
      		robot.delay(90); 
      		robot.keyRelease(KeyEvent.VK_ENTER);
         }
-    
     public void sendKeysFileUpload(WebElement imageField, String filePath) 
-    
-    {
+        {
         imageField.sendKeys(filePath);
+        }
     }
-    
-
-}

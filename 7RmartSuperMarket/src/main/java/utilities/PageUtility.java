@@ -91,9 +91,7 @@ public class PageUtility {
         JavascriptExecutor js = (JavascriptExecutor) driver;
       js.executeScript("window.scrollBy(0,-250)", "");
     }
-    
-	
-    
+     
 // Checkbox and Radio Button
     public void checkCheckbox(WebElement checkbox) {
         if (!checkbox.isSelected()) {

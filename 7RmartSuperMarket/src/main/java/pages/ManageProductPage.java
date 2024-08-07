@@ -18,14 +18,13 @@ public class ManageProductPage {
         waitutility = new WaitUtility();
     }
 
-    @FindBy(xpath = "//a[@onclick=\"click_button(2)\"]") WebElement searchIcon;
+    @FindBy(xpath = "//a[@onclick=\"click_button(2)\"]") private  WebElement searchIcon;
 
-    @FindBy(xpath = "//input[@name=\"un\"]") WebElement textToSearch;
+    @FindBy(xpath = "//input[@name=\"un\"]") private WebElement textToSearch;
 
-    @FindBy(xpath = "//button[@value=\"sr\"]") WebElement searchButton;
-    @FindBy(xpath = "//button[@class='btn btn-xs btn-success']") WebElement searchedproductinlist;
+    @FindBy(xpath = "//button[@value=\"sr\"]") private  WebElement searchButton;
+    @FindBy(xpath = "//button[@class='btn btn-xs btn-success']") private WebElement searchedproductinlist;
 
-   
 
      public ManageProductPage clickingSearchIconToLoadSearchPage()
      {

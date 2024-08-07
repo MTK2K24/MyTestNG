@@ -19,15 +19,14 @@ public class ManageNewsPage
 	        pageutility=new PageUtility();
 	    }
 	        
-	        @FindBy(xpath="//a[@onclick='click_button(1)']") WebElement newbutton;
-	        @FindBy(xpath="//textarea[@id='news']") WebElement enternewsfield;
-	        @FindBy(xpath="//button[@name='create']") WebElement savebutton;
-	        @FindBy(xpath="//div[@class='alert alert-success alert-dismissible']") WebElement successMessage;
+	        @FindBy(xpath="//a[@onclick='click_button(1)']") private WebElement newbutton;
+	        @FindBy(xpath="//textarea[@id='news']") private WebElement enternewsfield;
+	        @FindBy(xpath="//button[@name='create']") private WebElement savebutton;
+	        @FindBy(xpath="//div[@class='alert alert-success alert-dismissible']") private WebElement successMessage;
 	        
-	        public ManageNewsPage navigateToManageNewsPage() 
+	        public ManageNewsPage navigateToManageNewsPage(String url) 
 	        {
-	            String url = "https://groceryapp.uniqassosiates.com/admin/list-news";
-	            pageutility.navigateTo(driver, url);
+	           pageutility.navigateTo(driver, url);
 	            return this;
 	        }
 	        

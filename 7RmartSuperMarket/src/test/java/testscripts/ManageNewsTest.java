@@ -9,12 +9,13 @@ import org.testng.annotations.Test;
 
 public class ManageNewsTest extends Base {
 
-    @Test
-    public void verifyIfAProductCanBeSearchedUsingItsTitle() {
+    @Test(groups= {"Regression"},retryAnalyzer=retry.Retry.class,description="This test case is to verify if a news can be added")
+    public void verifyIfANewsCanBeAdded() {
 
         String username = ExcelUtility.getString(1, 0, "LoginPage");
         String password = ExcelUtility.getString(1, 1, "LoginPage");
         String title = ExcelUtility.getString(1, 0, "ManageNewsPage");
+        String url = ExcelUtility.getString(1, 1, "ManageNewsPage");
 
         LoginPage loginpage = new LoginPage(driver);
         loginpage.enterUserNameOnUserNameField(username)
@@ -22,7 +23,7 @@ public class ManageNewsTest extends Base {
                  .clickOnSignIn();
 
         ManageNewsPage managenewspage = new ManageNewsPage(driver);
-        managenewspage.navigateToManageNewsPage() 
+        managenewspage.navigateToManageNewsPage(url) 
                       .clickingNewButtonInManageNewsPage()
                       .enteringTextInNewsField(title)
                       .clickingSaveButton();

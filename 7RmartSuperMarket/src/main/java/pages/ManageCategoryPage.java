@@ -28,15 +28,23 @@ public class ManageCategoryPage
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         fileUploadUtility = new FileUploadUtility();
     }
-    @FindBy(xpath="//a[@onclick='click_button(1)']") WebElement newbutton; 
-    @FindBy(xpath="//input[@name='category']") WebElement categoryfield; 
-    @FindBy(xpath = "//*[@id='134-selectable']") WebElement groupselectfield;
-    @FindBy(xpath="//*[@id='main_img']") WebElement imageField; 
-    @FindBy(xpath="//input[@name='top_menu' and @value='no']") WebElement topmenuradio;
-    @FindBy(xpath="//input[@name='show_home' and @value='no']") WebElement leftmenuradio; 
-    @FindBy(xpath="//button[@name='create']") WebElement savebutton;
-    @FindBy(xpath="//*[@id='form']/div/div[5]/a") WebElement cancelbutton;
-    @FindBy(xpath="//div[@class='alert alert-success alert-dismissible']") WebElement successMessage;
+    @FindBy(xpath="//a[@onclick='click_button(1)']") private WebElement newbutton; 
+    @FindBy(xpath="//input[@name='category']") private WebElement categoryfield; 
+    @FindBy(xpath = "//*[@id='134-selectable']") private WebElement groupselectfield;
+    @FindBy(xpath="//*[@id='main_img']") private WebElement imageField; 
+    @FindBy(xpath="//input[@name='top_menu' and @value='no']") private WebElement topmenuradio;
+    @FindBy(xpath="//input[@name='show_home' and @value='no']") private WebElement leftmenuradio; 
+    @FindBy(xpath="//button[@name='create']") private WebElement savebutton;
+    @FindBy(xpath="//*[@id='form']/div/div[5]/a") private WebElement cancelbutton;
+    @FindBy(xpath="//div[@class='alert alert-success alert-dismissible']") private WebElement successMessage;
+    @FindBy(xpath="/html/body/div/div[1]/section/div[1]/a[2]") private WebElement searchicon;
+    @FindBy(xpath="//*[@id=\"srdiv\"]/div/div/div/div[2]/form/div/div[1]/input") private WebElement texttosearch;
+    @FindBy(xpath="//*[@id=\"srdiv\"]/div/div/div/div[2]/form/div/div[2]/button") private WebElement searchbutton;
+    @FindBy(xpath="/html/body/div/div[1]/section/div[4]/div[2]/table/tbody/tr[1]/td[1]") private WebElement searchedtextintable;
+    @FindBy(xpath="//a[@class='btn btn-sm btn btn-primary btncss']") private WebElement editiconintable;
+    @FindBy(xpath="//input[@name='show_home' and @value='yes']") private WebElement leftmenuradiobutton; 
+    @FindBy(xpath="//button[@name='create']") private WebElement updatebutton;
+    @FindBy(xpath="//div[@class='alert alert-success alert-dismissible']") private WebElement alertUpdateMessage;
     
     public ManageCategoryPage clickingNewButtonToLoadAddCategoryPage()
     {
@@ -63,27 +71,19 @@ public class ManageCategoryPage
     
     public ManageCategoryPage clickOnRadioButton()
     {
-    	//WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-        //wait.until(ExpectedConditions.elementToBeClickable(topmenuradio));
-    	   wait.until(ExpectedConditions.elementToBeClickable(topmenuradio)).click();
-    	//topmenuradio.click();
-    	return this;
+    	
+    	 wait.until(ExpectedConditions.elementToBeClickable(topmenuradio)).click();
+    	 return this;
     }
     public ManageCategoryPage clickOnSecondRadioButton()
     {
-    	//WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-        //wait.until(ExpectedConditions.elementToBeClickable(leftmenuradio));
-    	//leftmenuradio.click();
-    	 wait.until(ExpectedConditions.elementToBeClickable(leftmenuradio)).click();
+    	wait.until(ExpectedConditions.elementToBeClickable(leftmenuradio)).click();
     	return this;
     }
     
     public ManageCategoryPage clickOnSaveButton()
     {
-    	//WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-        //wait.until(ExpectedConditions.elementToBeClickable(savebutton));
-    	//savebutton.click();
-    	 wait.until(ExpectedConditions.elementToBeClickable(savebutton)).click();
+    	wait.until(ExpectedConditions.elementToBeClickable(savebutton)).click();
     	return this;
     
     }
@@ -93,6 +93,49 @@ public class ManageCategoryPage
         waitutility.waitUsingElementToBeVisible(driver, successMessage);
         return successMessage.getText();
     }
-   
+        
+    public ManageCategoryPage clickOnSearchIcon()
+    {
+    	searchicon.click();
+    	return this;
+        }
+    public ManageCategoryPage enterTextInSearchField()
+    {
+    	texttosearch.sendKeys("Olives");
+    	return this;
+        }
+    public ManageCategoryPage clickOnSearchButton()
+    {
+    	searchbutton.click();
+    	return this;
+        }
+    public boolean  findingEnteredTextInTable()
+    {
+    	return searchedtextintable.isDisplayed();
+    	        }
+    
+    public ManageCategoryPage clickingEditIcon()
+    {
+    	waitutility.waitUsingElementToBeClickable(driver, editiconintable);
+    	editiconintable.click();
+    	return this;
+        }
+    
+     public ManageCategoryPage clickOnYesRadioButton()
+    {
+    	waitutility.waitUsingElementToBeClickable(driver, leftmenuradiobutton);
+    	leftmenuradiobutton.click();
+    	return this;
+        }
+    public ManageCategoryPage clickOnUpdateButton()
+    {
+    	updatebutton.click();
+    	return this;
+        }
+    public String getUpdateMessage()
+    {
+        waitutility.waitUsingElementToBeVisible(driver, alertUpdateMessage);
+        return alertUpdateMessage.getText();
+    }
 
 }
