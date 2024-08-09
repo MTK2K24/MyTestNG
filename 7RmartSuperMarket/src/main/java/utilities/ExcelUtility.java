@@ -3,19 +3,17 @@ package utilities;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-
 import constants.Constants;
 
 public class ExcelUtility {
-	
 	public static XSSFWorkbook wb;
 	public static XSSFSheet sh;
 	public static FileInputStream f;
+
 	public static String getString(int i, int j, String sheet) {
 		String file_path = Constants.TESTDATAFILE;
 		try {
@@ -35,7 +33,7 @@ public class ExcelUtility {
 		Cell c = r.getCell(j);
 		return c.getStringCellValue();
 	}
-	
+
 	public static String getImage(int k, int l, String sheet) {
 		String file_path = Constants.TESTDATAFILE;
 		try {
@@ -55,5 +53,4 @@ public class ExcelUtility {
 		Cell c = r.getCell(l);
 		return c.getStringCellValue();
 	}
-
 }

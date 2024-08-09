@@ -4,7 +4,6 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
 public class ExtentReportUtility {
-	
 	public static final ExtentReports extentReports = new ExtentReports();
 
 	public synchronized static ExtentReports createExtentReports() {
@@ -15,5 +14,4 @@ public class ExtentReportUtility {
 		extentReports.setSystemInfo("Name", "Merin Abraham");
 		return extentReports;
 	}
-
 }
