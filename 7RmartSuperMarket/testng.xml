@@ -11,7 +11,7 @@
      <class name="testscripts.LoginTest">
      <methods>
     
-     <include name="verifyWhetherTheUserIsAbleToLoginWithCorrectUserNameAndCorrectPassword">
+     <include name="verifyWhetherUserIsUnabletoLoginUsingIncorrectUserNameAndInCorrectPassword">
      </include>
              </methods>
      </class>

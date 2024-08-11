@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-08-08T18:47:04 NZST" name="Suite" finished-at="2024-08-08T18:47:15 NZST" duration-ms="11739">
+  <suite started-at="2024-08-11T22:39:10 NZST" name="Suite" finished-at="2024-08-11T22:39:22 NZST" duration-ms="11985">
     <groups>
-      <group name="Regression">
-        <method signature="LoginTest.verifyWhetherTheUserIsAbleToLoginWithCorrectUserNameAndCorrectPassword()[pri:0, instance:testscripts.LoginTest@7fb95505]" name="verifyWhetherTheUserIsAbleToLoginWithCorrectUserNameAndCorrectPassword" class="testscripts.LoginTest"/>
-      </group> <!-- Regression -->
     </groups>
-    <test started-at="2024-08-08T18:47:04 NZST" name="Test" finished-at="2024-08-08T18:47:15 NZST" duration-ms="11739">
+    <test started-at="2024-08-11T22:39:10 NZST" name="Test" finished-at="2024-08-11T22:39:22 NZST" duration-ms="11985">
       <class name="testscripts.LoginTest">
-        <test-method is-config="true" signature="initalizeBrowser(java.lang.String)[pri:0, instance:testscripts.LoginTest@7fb95505]" started-at="2024-08-08T18:47:04 NZST" name="initalizeBrowser" finished-at="2024-08-08T18:47:12 NZST" duration-ms="8612" status="PASS">
+        <test-method is-config="true" signature="initalizeBrowser(java.lang.String)[pri:0, instance:testscripts.LoginTest@24ba9639]" started-at="2024-08-11T22:39:11 NZST" name="initalizeBrowser" finished-at="2024-08-11T22:39:17 NZST" duration-ms="5902" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -21,15 +18,65 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initalizeBrowser -->
-        <test-method signature="verifyWhetherTheUserIsAbleToLoginWithCorrectUserNameAndCorrectPassword()[pri:0, instance:testscripts.LoginTest@7fb95505]" started-at="2024-08-08T18:47:12 NZST" name="verifyWhetherTheUserIsAbleToLoginWithCorrectUserNameAndCorrectPassword" description="This test case is for correct login" finished-at="2024-08-08T18:47:15 NZST" duration-ms="2795" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyWhetherTheUserIsAbleToLoginWithCorrectUserNameAndCorrectPassword -->
-        <test-method is-config="true" signature="browserQuit(org.testng.ITestResult)[pri:0, instance:testscripts.LoginTest@7fb95505]" started-at="2024-08-08T18:47:15 NZST" name="browserQuit" finished-at="2024-08-08T18:47:15 NZST" duration-ms="275" status="PASS">
+        <test-method signature="verifyWhetherUserIsUnabletoLoginUsingIncorrectUserNameAndInCorrectPassword(java.lang.String,java.lang.String)[pri:0, instance:testscripts.LoginTest@24ba9639]" started-at="2024-08-11T22:39:17 NZST" name="verifyWhetherUserIsUnabletoLoginUsingIncorrectUserNameAndInCorrectPassword" description="This test case is used to verify whether user can login with correct user name and password" data-provider="LoginProvider" finished-at="2024-08-11T22:39:17 NZST" duration-ms="774" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=verifyWhetherTheUserIsAbleToLoginWithCorrectUserNameAndCorrectPassword status=SUCCESS method=LoginTest.verifyWhetherTheUserIsAbleToLoginWithCorrectUserNameAndCorrectPassword()[pri:0, instance:testscripts.LoginTest@7fb95505] output={null}]]]>
+                <![CDATA[geetha]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[aneeta]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyWhetherUserIsUnabletoLoginUsingIncorrectUserNameAndInCorrectPassword -->
+        <test-method is-config="true" signature="browserQuit(org.testng.ITestResult)[pri:0, instance:testscripts.LoginTest@24ba9639]" started-at="2024-08-11T22:39:17 NZST" name="browserQuit" finished-at="2024-08-11T22:39:18 NZST" duration-ms="278" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyWhetherUserIsUnabletoLoginUsingIncorrectUserNameAndInCorrectPassword status=SUCCESS method=LoginTest.verifyWhetherUserIsUnabletoLoginUsingIncorrectUserNameAndInCorrectPassword(java.lang.String,java.lang.String)[pri:0, instance:testscripts.LoginTest@24ba9639] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserQuit -->
+        <test-method is-config="true" signature="initalizeBrowser(java.lang.String)[pri:0, instance:testscripts.LoginTest@24ba9639]" started-at="2024-08-11T22:39:18 NZST" name="initalizeBrowser" finished-at="2024-08-11T22:39:21 NZST" duration-ms="2992" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initalizeBrowser -->
+        <test-method signature="verifyWhetherUserIsUnabletoLoginUsingIncorrectUserNameAndInCorrectPassword(java.lang.String,java.lang.String)[pri:0, instance:testscripts.LoginTest@24ba9639]" started-at="2024-08-11T22:39:21 NZST" name="verifyWhetherUserIsUnabletoLoginUsingIncorrectUserNameAndInCorrectPassword" description="This test case is used to verify whether user can login with correct user name and password" data-provider="LoginProvider" finished-at="2024-08-11T22:39:21 NZST" duration-ms="618" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[merin]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[wrongpaswd]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyWhetherUserIsUnabletoLoginUsingIncorrectUserNameAndInCorrectPassword -->
+        <test-method is-config="true" signature="browserQuit(org.testng.ITestResult)[pri:0, instance:testscripts.LoginTest@24ba9639]" started-at="2024-08-11T22:39:21 NZST" name="browserQuit" finished-at="2024-08-11T22:39:22 NZST" duration-ms="270" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyWhetherUserIsUnabletoLoginUsingIncorrectUserNameAndInCorrectPassword status=SUCCESS method=LoginTest.verifyWhetherUserIsUnabletoLoginUsingIncorrectUserNameAndInCorrectPassword(java.lang.String,java.lang.String)[pri:0, instance:testscripts.LoginTest@24ba9639] output={null}]]]>
               </value>
             </param>
           </params>
